@@ -21,6 +21,17 @@ namespace Sanskript.Repo.Demo.Controllers
             return View();
         }
 
+        [HttpPost]
+        public IActionResult Index(string username, string password)
+        {
+            if(username == "admin" && password == this.password)
+            {
+                return RedirectToAction("Privacy");
+            }
+
+            return View(password);
+        }
+
         public IActionResult Privacy()
         {
             return View();
